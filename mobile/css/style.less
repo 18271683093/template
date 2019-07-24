@@ -9,39 +9,78 @@
 /* ----------------
 	公共样式开始
 ----------------- */
+
+//去除ios点击div高亮
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 /*长页面滚轮*/
 html,
 body,
 .swiper-container,
 .swiper-slide,
 .swiper-wrapper {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .page-L {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .page-L::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .fl {
-	float: left;
+  float: left;
 }
 
 .fr {
-	float: right;
+  float: right;
 }
 
 img {
-	display: block;
-	margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* clear float */
+.clear,
+.clearfix:after {
+  clear: both;
+}
+
+.clear,
+.clearfix:before,
+.clearfix:after {
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: '';
+}
+
+.clearfix {
+  *zoom: 1;
 }
 
 /* ----------------
