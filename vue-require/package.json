@@ -1,0 +1,21 @@
+{
+  "name": "vue-require",
+  "version": "1.0.0",
+  "description": "一个基于ruquire.js的vue前端模板",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "dev": "node ./build/dev-server.js",
+    "dev-express": "node ./build/express-dev.js",
+    "start": "webpack --config ./build/webpack.dev.js"
+  },
+  "author": "Rainy",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-middleware": "^3.7.0"
+  }
+}
