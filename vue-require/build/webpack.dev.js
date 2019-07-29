@@ -12,17 +12,36 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'first/first.html', //打包好后，新建的html名字为first.html
-      template: './src/index.html', //以src下面的index.html为模板去创建新的html文件
+      filename: 'tpl/tpl.html', //打包好后，新建的html名字为first.html
+      // template: './src/index.html', //以src下面的index.html为模板去创建新的html文件
+      template: './src/view/template/index.tpl', //以src下面的index.html为模板去创建新的html文件
+      // inject: false,
+      // template: './src/template/index.ejs', //ejs模板 需要配置ejs.loader
       title: "test",
-      path: "first"
+      path: "first",
+      name: '123124',
+      data: '454564457'
     }),
   ],
-  mode: "development",
+  // mode: "development",
   module: {
-    rules: [{
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
-    }]
+    // loaders: [
+    //   { test: /\.tpl$/, loader: "swig-loader" }
+    // ]
+    rules: [
+      {
+        test: /\.tpl$/,
+        use: ['swig-loader']
+      },
+      // {
+      //   test: /\.ejs$/,
+      //   use: ['ejs-loader']
+      // }, 
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+
+    ]
   }
 })
