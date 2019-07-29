@@ -12,7 +12,7 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name]/[name].bundle.js',
     path: path.resolve(__dirname, "../dist")
   }
 
