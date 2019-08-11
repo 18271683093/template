@@ -6,14 +6,40 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    first: path.resolve(__dirname, "../src/assets/main.js")
+    // vendor: ["jquery"], //配置公共库
   },
   plugins: [
     new CleanWebpackPlugin()
   ],
   output: {
-    filename: '[name]/[name].bundle.js',
+    filename: '[name].[hash].js',
     path: path.resolve(__dirname, "../dist")
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "async",
+      minSize: 30000, // 模块的最小体积
+      minChunks: 1, // 模块的最小被引用次数
+      maxAsyncRequests: 5, // 按需加载的最大并行请求数
+      maxInitialRequests: 3, // 一个入口最大并行请求数
+      automaticNameDelimiter: '~', // 文件名的连接符
+      name: true,
+      cacheGroups: { // 缓存组
+        // common: {
+        //   name: "common",
+        //   chunks: "all",
+        //   minSize: 1,
+        //   priority: 0
+        // },
+        // 首先: 打包node_modules中的文件
+        vendors: {
+          name: "vendor",
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "all",
+          priority: 10
+        }
+      }
+    }
   }
 
 }

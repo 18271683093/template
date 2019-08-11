@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>{% block title %}{% endblock %} -{{title}}</title>
+  <title>{% block title %}{% endblock %}</title>
   {% block style %} {% endblock %}
 </head>
 

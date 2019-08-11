@@ -1,16 +1,8 @@
 const webpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const config = require('./webpack.dev.conf.js');
 
-const config = require('./webpack.dev.js');
-const parts = require('./part.js');
-// const options = merge({}, () => {
-
-//   parts.page({ title: "Webpack demo" }),
-//     parts.page({ title: "Another demo", path: "another" })
-// }
-
-// );
 
 // webpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
