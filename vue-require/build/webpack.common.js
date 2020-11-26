@@ -12,8 +12,13 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name]/js/index.[hash].js',
     path: path.resolve(__dirname, "../dist")
+  },
+  resolve: {  //resolve字段最常用的就是 alias （别名）属性，用来把一些冗长的路径替换为简单的字符，以便js中引入模块时更简洁
+    alias: {
+      'img': path.resolve(__dirname, '../src/assets'),
+    }
   },
   optimization: {
     splitChunks: {

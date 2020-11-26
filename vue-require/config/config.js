@@ -3,5 +3,6 @@ module.exports = {
   viewUrl: './src/view/entry/',
   templateSuffix: '.html,.tpl,.ejs',
   jsExt: ".js",
-  ishash: true
+  ishash: true,
+  distname: "dist"
 }

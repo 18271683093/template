@@ -13,12 +13,13 @@ const getEntries = (pattern, len) => {
     return previous
   }, {})
 }
-
+// console.log(process.cwd())
+// console.log(path.resolve(process.cwd(), '/src/assets/test/a.js'))
 // getEntries(`${config.viewUrl}**/*{${config.templateSuffix}}`, config.viewUrl.length);
 // getEntries(`${config.assetsUrl}**/*${config.jsExt}`, config.assetsUrl.length);
 const addjsfile = p => {
   var filePath = path.parse(p);
-  return filePath.dir + '/js/' + filePath.name;
+  return filePath.dir;//+ '/js/' + filePath.name;
 }
 const setEntry = () => {
   //配置页面
